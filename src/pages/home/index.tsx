@@ -1,5 +1,4 @@
 import LayoutPages from '@/Layout/LayoutPages';
-import classnames from 'classnames';
 import Banners from './module/Banners';
 import Contents from './module/Contents';
 import Features from './module/Features';

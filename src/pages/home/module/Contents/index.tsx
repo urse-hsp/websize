@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Col, Divider, Row } from 'antd';
-import Content from '@/components/Content';
+import { Col, Row } from 'antd';
 import './index.less';
 import contents1_img from '@/static/images/contents1.png';
 import contents2_img from '@/static/images/contents2.png';
+import Content from '@/components/Content';
 
-const ColProps = {
+export const ColProps = {
   span: 24,
   md: 12,
   xl: 12,
@@ -13,7 +12,7 @@ const ColProps = {
 
 const Index = () => {
   return (
-    <div className="contents home-page">
+    <Content className="contents">
       <Row className="contents-row">
         <Col className="gutter-row" {...ColProps}>
           <img src={contents1_img} alt="contents1" className="contents-img1" />
@@ -42,7 +41,7 @@ const Index = () => {
           </div>
         </Col>
       </Row>
-    </div>
+    </Content>
   );
 };
 export default Index;

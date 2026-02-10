@@ -13,10 +13,10 @@ const Index = () => {
       </FadeUpDiv>
 
       <FadeUpDiv className="teams-text">扫码加微信咨询</FadeUpDiv>
-      <FadeUpDiv className={'teams-email-text'}>
+      <div className={'teams-email-text'}>
         <img src={email_img} alt="teams" className="teams-email" />{' '}
         eason@dongya58.com
-      </FadeUpDiv>
+      </div>
     </Content>
   );
 };

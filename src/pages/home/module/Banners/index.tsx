@@ -3,19 +3,48 @@ import classNames from 'classnames';
 import { Button } from 'antd';
 import { FadeUpDiv, FlipDownFlipDiv } from '@/components/Motion/AOSDiv';
 import { useEffect } from 'react';
-import poster from '@/static/images/banners.jpg';
+// import poster from '@/static/images/banners.jpg';
 
 const Index = () => {
+  // 播放视频的函数
+  const playVideo = () => {
+    const video = document.getElementById('bannerVideo');
+    if (video) {
+      // 设置为 muted 以支持自动播放
+      video.muted = true;
+      video.play().catch((err) => {
+        console.error('播放失败：', err);
+      });
+    }
+  };
+
   useEffect(() => {
-    // 等待用户触摸屏幕后启动视频播放
-    document.addEventListener('touchstart', function () {
-      const video = document.getElementById('bannerVideo');
-      if (video) {
-        video.play().catch((err) => {
-          console.error('播放失败：', err);
-        });
-      }
-    });
+    // 触摸事件（安卓和苹果都可以触发）
+    const handleTouchStart = () => {
+      playVideo();
+    };
+
+    // 点击事件（确保在安卓设备上触发）
+    const handleClick = () => {
+      playVideo();
+    };
+
+    // 触摸结束事件（安卓设备有时需要 touchend ）
+    const handleTouchEnd = () => {
+      playVideo();
+    };
+
+    // 注册事件监听器
+    document.addEventListener('touchstart', handleTouchStart);
+    document.addEventListener('click', handleClick);
+    document.addEventListener('touchend', handleTouchEnd);
+
+    // 清理事件监听器
+    return () => {
+      document.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('click', handleClick);
+      document.removeEventListener('touchend', handleTouchEnd);
+    };
   }, []);
 
   const click = () => {

@@ -45,17 +45,19 @@
   &-text {
     font-weight: 600;
     font-size: 56px;
-    width: 672px;
     text-align: center;
     color: #fff;
     line-height: 78px;
 
     @media screen and (max-width: @sm) {
-      width: 100%;
-      padding: 0 16px;
-      font-size: 32px;
+      padding: 0 10px;
+      font-size: 30px;
       line-height: 46px;
       margin-top: 40px;
+    }
+
+    @media screen and (max-width: @min) {
+      font-size: 24px;
     }
   }
 

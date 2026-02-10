@@ -27,7 +27,7 @@ const Index = () => {
 
   return (
     <Content className="contents">
-      <Row className="contents-row" gutter={10} justify="center">
+      <Row gutter={20} justify="center">
         <Col className="gutter-row" {...ColProps} order={screens.md ? 0 : 2}>
           <FlipLeftFlipDiv
             data-aos-anchor-placement="top-bottom"
@@ -51,7 +51,7 @@ const Index = () => {
           </FadeUpDiv>
         </Col>
       </Row>
-      <Row className="contents-row">
+      <Row>
         <Col className="gutter-row" {...ColProps} order={2}>
           <FlipLeftFlipDiv className="contents-img2">
             <img src={contents2_img} alt="contents2" />

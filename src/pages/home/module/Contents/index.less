@@ -1,14 +1,14 @@
 @import '@/style/media.less';
 
 .contents {
-  padding: 95px 120px 58px;
+  padding: 95px 110px 58px;
 
-  @media screen and (max-width: @lg) {
-    padding: 30px;
+  @media screen and (max-width: @xl) {
+    padding: 30px 25px;
   }
+
   @media screen and (max-width: @sm) {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0 0 20px;
   }
 
   &-img1 {
@@ -16,6 +16,10 @@
     width: 564px;
     height: 485px;
     margin: 0 auto;
+    margin-bottom: 52px;
+    @media screen and (max-width: @md) {
+      margin-bottom: 0;
+    }
   }
 
   &-img2 {
@@ -49,13 +53,12 @@
     // }
   }
 
-  &-row {
-    margin-bottom: 84px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+  // &-row {
+  //   margin-bottom: 84px;
+  //   &:last-child {
+  //     margin-bottom: 0;
+  //   }
+  // }
 
   &-item {
     &__type {
@@ -77,6 +80,7 @@
       line-height: 25px;
       color: #333333;
       margin-bottom: 58px;
+      text-align: justify;
     }
   }
 }

@@ -24,10 +24,17 @@ const Index = () => {
     <Content className="features2" isFadeUpDiv={false}>
       <ItemTitle
         title="双端产品，完美协同"
-        desc="普通用户使用微信小程序，工作人员在电脑或手机登录web管理后台，双端产品高效协同"
+        desc="普通用户使用微信小程序，工作人员在电脑或手机登录Web管理后台，双端产品高效协同"
       />
-      <Row className="features2-content" gutter={10} justify={'center'}>
-        <Col {...ColProps_} className="features2-content-item">
+      <Row className="features2-content" justify={'center'}>
+        <Col
+          {...ColProps_}
+          md={7}
+          lg={8}
+          xl={9}
+          xxl={10}
+          className="features2-content-item"
+        >
           <FadeSlideRightDiv className={'features2-content-item-wrap'}>
             <img
               src={weapp_img}
@@ -41,7 +48,14 @@ const Index = () => {
             />
           </FadeSlideRightDiv>
         </Col>
-        <Col {...ColProps_} className="features2-content-item">
+        <Col
+          {...ColProps_}
+          md={17}
+          lg={16}
+          xl={15}
+          xxl={14}
+          className="features2-content-item"
+        >
           <FadeSlideLeftDiv className={'features2-content-item-wrap'}>
             <img
               src={pc_img}

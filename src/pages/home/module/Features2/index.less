@@ -1,7 +1,15 @@
 @import '@/style/media.less';
 
 .features2 {
-  padding-bottom: 76px;
+  padding: 0 120px 76px;
+
+  @media screen and (max-width: @xl) {
+    padding: 0 30px 40px;
+  }
+  @media screen and (max-width: @sm) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   &-content {
     &-item {
@@ -17,15 +25,30 @@
     }
 
     &__weapp {
-      width: 222px;
-      height: 433px;
+      @width: 222px;
+      @height: 433px;
+      width: @width;
+      height: @height;
       margin-bottom: 12px;
-      @media screen and (max-width: @xl) {
-        zoom: 1.3;
+      transform-origin: top center; // 从顶部中间放大，避免往下撑布局
+
+      @media screen and (max-width: @md) {
+        width: @width * 1.3; /* 修改宽高 */
+        height: @height * 1.3;
+        // background-color: red;
       }
-      @media screen and (max-width: @sm) {
-        zoom: 1.5;
-      }
+
+      // @media screen and (max-width: @sm) {
+      //   width: @width * 1.6;
+      //   height: @height * 1.6;
+      //   background-color: yellow;
+      // }
+
+      // @media screen and (max-width: @min) {
+      //   width: @width * 2;
+      //   height: @height * 2;
+      //   background-color: blue;
+      // }
     }
 
     &__pc {

@@ -1,3 +1,5 @@
+@import '@/style/media.less';
+
 .header {
   position: fixed;
   top: 0;
@@ -7,17 +9,27 @@
   height: 80px;
   width: 100%;
   background-color: transparent;
+  .minAppWidth(); // 调用函数
+
+  @media screen and (max-width: @xl) {
+    padding: 20px;
+  }
+
   &-content {
-    width: 1200px;
+    max-width: 1200px;
     margin: auto;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media screen and (min-width: @xl) {
+      max-width: calc((100vw - 1200px) / 2 + 1200px);
+    }
   }
   &--black {
     background-color: #fff;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.12);
   }
 
   &-login {
@@ -28,7 +40,7 @@
   }
 
   &-logo {
-    width: 64px;
+    // width: 64px;
     height: 52px;
   }
 }

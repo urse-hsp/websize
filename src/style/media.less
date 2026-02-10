@@ -2,37 +2,59 @@
   * 适配
 */
 
+// @import '@/style/media.less';
+
 @min: 370px;
-@xs: 480px; // xs	屏幕 < 576px 响应式栅格，可为栅格数或一个包含其他属性的对象
+// @xs: 480px; // xs	屏幕 < 576px 响应式栅格，可为栅格数或一个包含其他属性的对象
 @sm: 576px; // sm	屏幕 ≥ 576px 响应式栅格，可为栅格数或一个包含其他属性的对象
 @md: 768px; // md	屏幕 ≥ 768px 响应式栅格，可为栅格数或一个包含其他属性的对象
 @lg: 992px; // lg	屏幕 ≥ 992px 响应式栅格，可为栅格数或一个包含其他属性的对象
 @xl: 1200px; // xl	屏幕 ≥ 1200px 响应式栅格，可为栅格数或一个包含其他属性的对象
 @xxl: 1600px; // xxl	屏幕 ≥ 1600px 响应式栅格，可为栅格数或一个包含其他属性的对象
 
-:root {
-  font-size: 16px;
+// // 定义一个函数：计算比例宽度
+// .calcWidth(@base, @ratio) {
+//   @result: @base * @ratio;
+// }
+// .calcWidth(200px, 0.5); // 调用函数
+// width: @result;         // 取“返回值”
+
+// 定义一个函数：计算比例宽度
+.minAppWidth() {
+  // app最小视图
+  /* prettier-ignore */
+  min-width: 300PX!important;
+  // -webkit-user-select: none; /*webkit浏览器*/
+  // -moz-user-select: none; /*火狐*/
+  // -ms-user-select: none; /*IE10*/
+  // user-select: none;
 }
 
-// @media screen and (max-width: $sm) {
-//   :root {
-//     font-size: 8px;
-//   }
-// }
+:root {
+  font-size: 16px;
+  .minAppWidth(); // 调用函数
+}
 
-// @media screen and (min-width: $sm) and (max-width: $md) {
-//   :root {
-//     font-size: 10px;
-//   }
-// }
+@media screen and (max-width: @lg) {
+  :root {
+    font-size: 14px;
+  }
+}
 
-// @media screen and (min-width: $md) and (max-width: $lg) {
-//   :root {
-//     font-size: 12px;
-//   }
-// }
-// @media screen and (min-width: $lg) and (max-width: $xl) {
-//   :root {
-//     font-size: 14px;
-//   }
-// }
+@media screen and (max-width: @md) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: @sm) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: @min) {
+  :root {
+    font-size: 8px;
+  }
+}

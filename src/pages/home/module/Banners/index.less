@@ -1,41 +1,62 @@
+@import '@/style/media.less';
+
+@width: 1799px;
+
 .banners {
   position: relative;
-  background: url('~@/static/images/banners.png') no-repeat black;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vh;
-  // height: 600px;
-  overflow: hidden;
+  background-color: black;
+  overflow: hidden; // 防止视频溢出
+  height: 1080px;
+  @media screen and (max-width: @width) {
+    height: 700px;
+  }
+
+  @media screen and (max-width: @sm) {
+    height: 40vh;
+  }
 
   &::before {
     position: absolute;
-    content: ' ';
+    content: '';
+    inset: 0; // 等价于 top:0 left:0 right:0 bottom:0
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+  }
+
+  &-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    object-fit: cover; // ⭐ 关键：铺满并裁剪
+    transform: translate(-50%, -50%);
   }
 
   &-content {
-    // position: relative;
-    // height: 100vh;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // width: 100%;
+    position: relative;
+    z-index: 2; // 在遮罩层之上
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   &-text {
     font-weight: 600;
     font-size: 56px;
     width: 672px;
     text-align: center;
     color: #fff;
-    z-index: 1;
     line-height: 78px;
-    margin-bottom: 32px;
+
+    @media screen and (max-width: @sm) {
+      width: 100%;
+      padding: 0 16px;
+      font-size: 32px;
+      line-height: 46px;
+      margin-top: 40px;
+    }
   }
 
   &-button {
@@ -45,10 +66,9 @@
     font-weight: 600;
     font-size: 18px;
     color: #fff;
+    border-color: #fff;
+    &:hover {
+      background-color: transparent !important;
+    }
   }
-  // &-img {
-  //   width: 100%;
-  //   height: auto;
-  //   display: block; /* 去掉图片底部空隙 */
-  // }
 }

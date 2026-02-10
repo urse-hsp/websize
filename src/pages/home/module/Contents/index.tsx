@@ -33,7 +33,7 @@ const Index = () => {
             data-aos-anchor-placement="top-bottom"
             className="contents-img1"
           >
-            <img src={contents1_img} alt="contents1" />
+            <img src="https://pic.dongya58.com/contents1.png" alt="contents1" />
           </FlipLeftFlipDiv>
         </Col>
         <Col className="gutter-row" {...ColProps} order={screens.md ? 0 : 1}>
@@ -54,7 +54,7 @@ const Index = () => {
       <Row>
         <Col className="gutter-row" {...ColProps} order={2}>
           <FlipLeftFlipDiv className="contents-img2">
-            <img src={contents2_img} alt="contents2" />
+            <img src="https://pic.dongya58.com/contents2.png" alt="contents2" />
             {/* <FadeRightDiv className={'contents-img2--2'}>
               <img src={contents2_1_img} alt="contents2" />
             </FadeRightDiv>

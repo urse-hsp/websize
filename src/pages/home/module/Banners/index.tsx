@@ -53,7 +53,7 @@ const Index = () => {
         loop
         playsInline
         id="bannerVideo"
-        poster={poster}
+        poster="https://pic.dongya58.com/banners.jpg"
       />
     </div>
   );
